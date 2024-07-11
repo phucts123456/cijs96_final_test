@@ -5,7 +5,6 @@ import TaskItem from '../Task/TaskItem'
 
 function ActiveTab() {
     const taskListFromLocalStorage = localStorage.getItem("tasks");
-    console.log(taskListFromLocalStorage);
     const [taskList, setTaskList] = useState(taskListFromLocalStorage != null ? JSON.parse(taskListFromLocalStorage) : []);
 
       const setTaskStatus = (task) => {

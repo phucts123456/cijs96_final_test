@@ -11,12 +11,13 @@ function CompletedTab() {
         setTaskList(tempTaskList);
         localStorage.setItem("tasks", JSON.stringify(tempTaskList))
       }
-
+   
       const deleteAllCompleteTask = () => {
         const tempTaskList = taskList.filter((item) => item.status == 0);
         setTaskList(tempTaskList);
         localStorage.setItem("tasks", JSON.stringify(tempTaskList))
       }
+      console.log("length" + taskList.filter((item) => item.status == 1).length);
       return (
         <div className='all_tab_container'>
            {
@@ -25,7 +26,9 @@ function CompletedTab() {
                         return <TaskItem id={item.id} name={item.name} status={item.status} isCompletedTab={true} deleteSinglelCompleteTask={deleteSinglelCompleteTask}/>
                 })
            }
-           <button className='all_tab_delete_all_btn' onClick={deleteAllCompleteTask}><img src='/img/icons8-trash_white.svg'></img><span>Delete all</span></button>    
+           { taskList.filter((item) => item.status == 1).length > 0
+           ? <button className='all_tab_delete_all_btn' onClick={deleteAllCompleteTask}><img src='/img/icons8-trash_white.svg'></img><span>Delete all</span></button>   
+           : ""}
         </div>)
 }
 
