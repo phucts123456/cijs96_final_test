@@ -1,0 +1,35 @@
+.task_item_container
+{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.task_item_container .task_item_check_box
+{
+    width: 5%;
+    margin-right: 5px;
+}
+
+.task_item_container .task_item_name
+{
+    width: 80%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.task_item_container .completed
+{
+    text-decoration: line-through;
+}
+
+.task_item_container button
+{
+    width: 10%;
+    background-color: white;
+}
+
+.task_item_container button .task_item_remove_item_icon
+{
+    width: 100%;
+    background-color: white;
+}

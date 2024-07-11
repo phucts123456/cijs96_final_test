@@ -1,0 +1,26 @@
+.search_container
+{
+    height: 40px;
+    margin-bottom: 20px;
+}
+.search_container .search_add_btn
+{
+    height: 100%;
+    padding: 0;
+    width: 15%;
+    background-color: #0084f5;
+    color: #fff;
+    border-radius: 5px;
+}
+.search_container .serach_input
+{
+    height: 100%;
+    width: 75%;
+    margin-right: 20px;
+    position: relative;
+    top:0;
+    padding-left: 7px;
+    border-radius: 5px;
+    color: grey;
+    font-size: 19px;
+}
