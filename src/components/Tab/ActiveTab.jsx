@@ -10,11 +10,11 @@ function ActiveTab() {
 
       const setTaskStatus = (task) => {
         const tempTaskList = taskList.filter((item) => item.id != task.id);
-        const newTaskList = [...tempTaskList, task]
+        const newTaskList = [...tempTaskList, task];
         setTaskList(newTaskList);
         localStorage.setItem("tasks", JSON.stringify(newTaskList))
       }
-      
+
       const addTask = (name) =>{
         let newTask = {
            id: taskList.length +1,

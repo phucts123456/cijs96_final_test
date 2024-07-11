@@ -1,14 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import AddForm from '../AddForm/AddForm'
+import './CompleteTab.css'
 import TaskItem from '../Task/TaskItem'
 function CompletedTab() {
     const taskListFromLocalStorage = localStorage.getItem("tasks");
-    console.log(taskListFromLocalStorage);
     const [taskList, setTaskList] = useState(taskListFromLocalStorage != null ? JSON.parse(taskListFromLocalStorage) : []);
 
       const deleteSinglelCompleteTask = (id) => {
-        console.log("start delete" +id)
         const tempTaskList = taskList.filter((item) => item.id != id);
         setTaskList(tempTaskList);
         localStorage.setItem("tasks", JSON.stringify(tempTaskList))
@@ -26,7 +24,8 @@ function CompletedTab() {
                     if(item.status == 1)
                         return <TaskItem id={item.id} name={item.name} status={item.status} isCompletedTab={true} deleteSinglelCompleteTask={deleteSinglelCompleteTask}/>
                 })
-           }    
+           }
+           <button className='all_tab_delete_all_btn' onClick={deleteAllCompleteTask}><img src='/img/icons8-trash_white.svg'></img><span>Delete all</span></button>    
         </div>)
 }
 

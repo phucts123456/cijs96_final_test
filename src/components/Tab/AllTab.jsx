@@ -5,12 +5,13 @@ import TaskItem from '../Task/TaskItem'
 
 function AllTab() {
   const taskListFromLocalStorage = localStorage.getItem("tasks");
-    console.log(taskListFromLocalStorage);
     const [taskList, setTaskList] = useState(taskListFromLocalStorage != null ? JSON.parse(taskListFromLocalStorage) : []);
 
       const setTaskStatus = (task) => {
         const tempTaskList = taskList.filter((item) => item.id != task.id);
-        setTaskList([...tempTaskList, task]);
+        const newTaskList = [...tempTaskList, task];
+        setTaskList(newTaskList);
+        localStorage.setItem("tasks", JSON.stringify(newTaskList))
       }
       const addTask = (name) =>{
         let newTask = {

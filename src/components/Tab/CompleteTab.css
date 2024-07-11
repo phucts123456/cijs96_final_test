@@ -1,0 +1,14 @@
+.all_tab_delete_all_btn
+{
+    background-color: red;
+    color:white; 
+    float:right;
+    display: flex;
+}
+
+.all_tab_delete_all_btn img
+{
+    height: 20px;
+   color: white;
+   margin-right: 5px;
+}

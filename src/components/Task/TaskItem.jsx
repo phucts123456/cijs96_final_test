@@ -13,7 +13,7 @@ function TaskItem({id, name, status, isCompletedTab, setTaskStatus, deleteSingle
     <div className='task_item_container'>
       <input className='task_item_check_box' type="checkbox" checked={checked} onChange={handleCheckChange} />
       <p className={`task_item_name  ${checked ? 'completed' : ''}`}>{name}</p>
-      {isCompletedTab == true ? <button onClick={() => {deleteSinglelCompleteTask(id)}}><img className='task_item_remove_item_icon' src='/img/icons8-trash.svg'/></button> : ""}
+      {isCompletedTab == true ? <button onClick={() => {deleteSinglelCompleteTask(id)}}><img className='task_item_remove_item_icon' src='/img/icons8-trash.svg'/></button> : ""}   
     </div>
   )
 }
